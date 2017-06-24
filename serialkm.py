@@ -378,7 +378,7 @@ def initialize(args):
 
     # Catch Error of wrong port: display all open ports instead
     if port.lower() in ('?', 'who', 'whois'):
-        if len(val_ports) == 0:
+        if not val_ports:
             print('\tNo valid ports found')
         else:
             print('\tValid ports:')
@@ -391,7 +391,7 @@ def initialize(args):
     except (ValueError, serial.SerialException):
         # https://pythonhosted.org/pyserial/pyserial_api.html?highlight=serial#serial.Serial
         print('Could not connect to Serial Port')
-        if len(val_ports) == 0:
+        if not val_ports == 0:
             print('\tNo valid ports found')
         else:
             print('\tValid ports:')
